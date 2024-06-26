@@ -4,57 +4,57 @@ int main()
 {
     int month;
     printf("Enter the Month Number :");
-    scanf("%d",&month);
-    if(month==1)
+    scanf("%d", &month);
+    if(month == 1)
     {
         printf("\nJanuary contains 31 Days");
     }
-    else if(month==2)
+    else if(month == 2)
     {
         printf("\nFebruary contains 28 or 29 Days");
     }
-    else if(month==3)
+    else if(month == 3)
     {
         printf("\nMarch contains 31 Days");
     }
-    else if(month==4)
+    else if(month == 4)
     {
         printf("\nApril contains 30 Days");
     }
-    else if(month==5)
+    else if(month == 5)
     {
         printf("\nMay contains 31 Days");
     }
-    else if(month==6)
+    else if(month == 6)
     {
         printf("\nJune contains 30 Days");
     }
-    else if(month==7)
+    else if(month == 7)
     {
         printf("\nJuly contains 31 Days");
     }
 
-    else if(month==8)
+    else if(month == 8)
     {
         printf("\nAugust contains 31 Days");
     }
 
-    else if(month==9)
+    else if(month == 9)
     {
         printf("\nSeptember contains 30 Days");
     }
 
-    else if(month==10)
+    else if(month == 10)
     {
         printf("\nOctober contains 31 Days");
     }
 
-    else if(month==11)
+    else if(month == 11)
     {
         printf("\nNovember contains 30 Days");
     }
 
-    else if(month==12)
+    else if(month == 12)
     {
         printf("\nDecember contains 31 Days");
     }

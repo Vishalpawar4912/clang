@@ -6,7 +6,6 @@ int main()
     int x, n, pow = 1, i = 0;
     printf("\nEnter the value of X and n :");
     scanf("%d %d", &x, &n);
-    pow = x;
     while(n != i)
     {
         pow = pow * x;

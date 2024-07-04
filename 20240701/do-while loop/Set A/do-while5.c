@@ -14,7 +14,7 @@ int main()
         if(ch == 'z' || ch == 'Z')
         {
             printf("Large Limit");
-            i = n;
+            break;
         }
         else{
             printf("%c\n", ch);

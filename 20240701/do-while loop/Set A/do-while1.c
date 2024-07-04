@@ -5,7 +5,6 @@ int main()
     int n, i = 1;
     printf("Enter the Number :\n");
     scanf("%d", &n);
-    n++;
     do
     {
         if(i % 2 == 0)

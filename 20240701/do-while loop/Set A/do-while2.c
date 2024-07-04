@@ -7,12 +7,16 @@ int main()
     scanf("%d", &x);
     printf("Enter Second Number it should be Greater than First One :\n");
     scanf("%d", &y);
-    int first = x;
-    int second = y;
-    do
+    if(x < y)
     {
-        sum = sum + x;
-        x++;
-    } while (x <= y);
-    printf("Sum of all integers between %d and %d : %d\n", first, second, sum);
+        do
+        {
+            sum = sum + x;
+            x++;
+        } while (x <= y);
+        printf("Sum of all integers between %d and %d : %d\n", x, y, sum);
+    }
+    else{
+        printf("We cannot Calculate sum because Second Number should be greater than First One");
+    }
 }

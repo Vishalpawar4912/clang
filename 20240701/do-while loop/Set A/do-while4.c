@@ -2,21 +2,26 @@
 #include<stdio.h>
 int main()
 {
-    int num, temp = 0;
+    int num, flag = 0;
     printf("Enter the Number to check Prime or Not :\n");
     scanf("%d", &num);
+    if(num == 0)
+    {
+        printf("%d is Not Prime Number", num);
+        return 0;
+    }
     int i = 2;
     do
     {
         if(num % i == 0)
         {
-            temp++;
+            flag = 1;
             break;
         }
         i++;
     } while (i <= num / 2);
 
-    if(temp == 0 && num != 0)
+    if(flag == 0)
     {
         printf("%d is Prime Number", num);
     }

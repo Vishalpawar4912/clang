@@ -2,18 +2,21 @@
 #include<stdio.h>
 int main()
 {
-    int x = 1, y = 0, sum = 0;
-    while(x > y)
+    int x, y, sum = 0;
+    printf("\nFirst Number :");
+    scanf("%d", &x);
+    printf("\nSecond Number Should be greater than First One :");
+    scanf("%d", &y);
+    if(x < y)
     {
-        printf("\nFirst Number :");
-        scanf("%d", &x);
-        printf("\nSecond Number Should be greater than First One :");
-        scanf("%d", &y);
+        while(x <= y)
+        {
+            sum = sum + x;
+            x++;
+        }
+        printf("\nResult : %d", sum);
     }
-    while(x <= y)
-    {
-        sum = sum + x;
-        x++;
+    else{
+        printf("We cannot Calculate sum because Second Number should be greater than First One");
     }
-    printf("\nResult : %d", sum);
 }

@@ -1,6 +1,5 @@
 //  3. Write a program to accept two integers x and n and compute x^n.
 #include<stdio.h>
-#include<math.h>
 int main()
 {
     int x, n, pow = 1, i = 0;

@@ -4,5 +4,23 @@
 #include<stdio.h>
 int main()
 {
+    int time = 4 * 60 + 30;
+    int turnA = 0, turnB = 0;
+    int amtA = 0, amtB = 0;
+    do
+    {
+        time = time - 25;
+        turnA++;
+        amtA = amtA + 50;
 
+        time = time - 75;
+        turnB++;
+        amtB = amtB + 150;
+
+    } while (time > 0);
+    printf("Total turns by A: %d\n", turnA);
+    printf("Total turns by B: %d\n", turnB);
+    printf("Total amount of A: Rs. %d\n", amtA);
+    printf("Total amount of B: Rs. %d\n", amtB);
+    printf("Total cost of the task: Rs. %d\n", amtA + amtB);
 }

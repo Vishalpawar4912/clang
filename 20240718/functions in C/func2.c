@@ -1,31 +1,21 @@
-//Count Alphabets, Digits and Special Symbols.
+//2. Interchanging Two Numbers using call by value.
 #include<stdio.h>
-#include<ctype.h>
-int check (char ch)
+void swap(int x, int y)
 {
-    if(isalpha (ch))
-        return 1;
-    if(isdigit (ch))
-        return 2;
-    return 3;
+    int temp;
+    temp = x;
+    x = y;
+    y = temp;
+    printf("\nIn Function Interchange x = %d, y = %d", x, y);
 }
 int main()
 {
-    char ch;
-    int c1 = 0, c2 = 0, c3 = 0;
-    printf("Enter Characters - type CTRL+Z when done :\n");
-    while ((ch = getchar()) != EOF)
-    switch(check(ch))
-    {
-        case 1: c1++;
-            break;
-        case 2: c2++;
-            break;
-        case 3: c3++;
-            break;
-    }
-    printf("\nThe Number of Alphabets = %d", c1);
-    printf("\nThe Number of Digits = %d", c2);
-    printf("\nThe Number of Special Symbols = %d", c3);
+    int a = 10, b = 20;
+    void swap(int, int);
+    printf("Before Interchange a = %d, b = %d", a, b);
+    printf("\nAddress of a:%d, b:%d", &a, &b);
+    swap(a, b);
+    printf("\nAfter Interchange a = %d, b = %d", a, b);
+    printf("\nAddress of a:%d, b:%d", &a, &b);
     return 0;
 }

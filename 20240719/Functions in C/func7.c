@@ -1,4 +1,4 @@
-//9. Write a C program to print all perfect numbers between given interval using functions.
+//7. Write a C program to print all perfect numbers between given interval using functions.
 #include<stdio.h>
 void findPerfectNumbers(int start, int end) 
 {

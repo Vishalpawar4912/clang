@@ -5,9 +5,11 @@ int main()
     int i, n, num[50];
     printf("How many numbers: ");
     scanf("%d", &n);
+    // accept array elements
     printf("Enter the Numbers:\n");
     for(i = 0; i < n; i++)
     scanf("%d", &num[i]);
+    // displaying only the even numbers
     printf("\n The Even Numbers are:\n");
     for(i = 0; i < n; i++)
     {

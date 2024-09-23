@@ -1,78 +1,56 @@
-// 7. Union within structure.
+// 7. Write a C program to create a structure 'Student' containing, rollno name and percentage of marks. 
+// Read information of 'n' students and display records in descending order of percentage of marks.
 #include<stdio.h>
-enum type {batsman = 1, bowler = 2, wicketkeeper = 3};
-struct player
+struct stud
 {
-    char name[20];
-    enum type ptype;
-    union
-    {
-        float batavg;
-        int wickets;
-        int stumping;
-    }info;
+    int rollno;
+    char name[25];
+    int perc;
 };
 int main()
 {
-    struct player p[11];
-    accept(p);
-    dispsummary(p);
+    struct stud s[10];
+    int n, i, j, temp;
+    char tempstr[25];
+    scanf("%d", &n);
+    for(i = 0; i < n; i++)
+    {
+        printf("Enter Roll NUmber, Name and Percentage of Student #%d: \n", i + 1);
+        scanf("%d %s %d", &s[i].rollno, &s[i].name, &s[i].perc);
+    }
+    printf("\nStudent Records: ");
+    for(i = 0; i < n; i++)
+    {
+        printf("\nStudent #%d : ", i + 1);
+        printf("\nRoll No : %d", s[i].rollno);
+        printf("\nName : %s", s[i].name);
+        printf("\nPercentage : %d\n", s[i].perc);
+    }
+    for(i = 0; i < n; i++)
+    {
+        for(j = 0; j < n - i - 1; j++)
+        {
+            if(s[j].perc < s[j + 1].perc)
+            {
+                temp = s[j].rollno;
+                s[j].rollno = s[j + 1].rollno;
+                s[j + 1].rollno = temp;
+                temp = s[j].perc;
+                s[j].perc = s[j + 1].perc;
+                s[j + 1].perc = temp;
+                strcpy(tempstr, s[j].name);
+                strcpy(s[j].name, s[j + 1].name);
+                strcpy(s[j + 1].name, tempstr);
+            }
+        }
+    }
+    printf("\nStudent Records in Descending Order of Percentage: ");
+    for(i = 0; i < n; i++)
+    {
+        printf("\nStudent #%d : ", i + 1);
+        printf("\nRoll No : %d", s[i].rollno);
+        printf("\nName : %s", s[i].name);
+        printf("\nPercentage : %d\n", s[i].perc);
+    }
     return 0;
-}
-void accept(struct player p[])
-{
-    int i;
-    for(i = 0; i < 11; i++)
-    {
-        printf("Enter the Name: ");
-        gets(p[i].name);
-        printf("Enter the Player Type(1 - Batsman, 2 - Bowler, 3 - Wicketkeeper)");
-        scanf("%d", &p[i].ptype);
-        switch(p[i].ptype)
-        {
-            case 1:
-                printf("Enter the Batting Average: ");
-                scanf("%f", &p[i].info.batavg);
-                break;
-            case 2:
-                printf("Enter the Wickets Taken: ");
-                scanf("%f", &p[i].info.wickets);
-                break;
-            case 3:
-                printf("Enter the Stumpings: ");
-                scanf("%f", &p[i].info.stumping);
-                break;
-        }
-    }
-}
-void dispsummary(struct player p[])
-{
-    int i;
-    printf("\n All Batsman \n");
-    for(i = 0; i < 11; i++)
-    {
-        if(p[i].ptype == 1)
-        {
-            printf("%s\t", p[i].name);
-            printf("%f\n", p[i].info.batavg);
-        }
-    }
-    printf("\n All Bowlers \n");
-    for(i = 0; i < 11; i++)
-    {
-        if(p[i].ptype == 2)
-        {
-            printf("%s\t", p[i].name);
-            printf("%f\n", p[i].info.wickets);
-        }
-    }
-    printf("\n Wicketkeeper \n");
-    for(i = 0; i < 11; i++)
-    {
-        if(p[i].ptype == 3)
-        {
-            printf("%s\t", p[i].name);
-            printf("%f\n", p[i].info.stumping);
-        }
-    }
 }
